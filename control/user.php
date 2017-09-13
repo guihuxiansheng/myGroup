@@ -10,12 +10,11 @@ class userControl extends baseControl{
 		// 查询用户出来
 		$model = $this->model();
 
-		$zoo_user = $model->select("zoo_user");//查询所有
+		$zoo_user = $model->query("select * from zoo_user");//查询所有
 
 		// print_r($zoo_user);
 
-		return $zoo_user;
-		// $this->display("index/index.html",$user_list);
+		$this->display("manage.php",$zoo_user);
 	}
 
 	//
@@ -31,8 +30,6 @@ class userControl extends baseControl{
 		$zoo_user = $model->query("select * from zoo_user where id=$id");//获取用户基本数据
 
 		// print_r($zoo_user);
-
-		return $zoo_user;
 		
 		// $this->display("person/person.html",$user_list);
 	}
@@ -47,14 +44,25 @@ class userControl extends baseControl{
 		// 第二个参数：分割后的数组1下标值，
 		// ........
 		// list($parent_id,$level) = explode("_", $_POST['parent_id']);
-		$bigimg= json_encode($_POST['bigimg']);
+		$var_file_data = $_FILES;
+		$file01 = $this->saveFiles($var_file_data['bigimg01'],'data/img/');
+		$file02 = $this->saveFiles($var_file_data['bigimg02'],'data/img/');
+		$file03 = $this->saveFiles($var_file_data['bigimg03'],'data/img/');
+		$file04 = $this->saveFiles($var_file_data['iconimg'],'data/img/');
+		$big_img = [
+			$file01,
+			$file02,
+			$file03,
+		];
+		$bigimg= json_encode($big_img);
 
 		$model->insert("zoo_user",[
 			'name'=>$_POST['name'],
 			'intro'=>$_POST['intro'],
 			'bigimg'=>$bigimg,
-			'iconimg'=>$_POST['iconimg'],
+			'iconimg'=>$file04,
 			]);
+		$this->index();
 	}
 
 	// 删除
@@ -64,6 +72,20 @@ class userControl extends baseControl{
 		$model = $this->model();
 
 		$model->delete("zoo_user",'id='.$_POST['id']);
+		$this->index();
+	}
+
+	function saveFiles($file_data,$path){
+		// 获取文件临时路径
+		$var_file_path = $file_data['tmp_name'];
+		// 获取文件类型
+		$file_type = explode('/', $file_data['type']);
+		// 生成新的文件信息
+		$save_file_path = $path.time().rand(100000,1000000).'.'.$file_type[1];
+		// 保存图片
+		copy($var_file_path,$save_file_path);
+
+		return $save_file_path;
 	}
 }
 

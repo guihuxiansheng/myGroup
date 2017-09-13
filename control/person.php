@@ -1,6 +1,6 @@
 <?php
 /**
- * 商品分类控制器
+ * 个人介绍控制器
  */
 class personControl extends baseControl{
 
@@ -10,11 +10,12 @@ class personControl extends baseControl{
 		// 查询出来
 		$model = $this->model();
 
-		$user_list = $model->query("select * from zoo_user");
-		$skill_list = $model->query("select * from zoo_skill");
-		$edu_list = $model->query("select * from zoo_edu");
-		$edu_list = $model->query("select * from zoo_edu");
-		$exp_list = $model->query("select * from zoo_exp");
+		$id = $_GET['id']?$_GET['id']: 1;
+
+		$user_list = $model->query("select * from zoo_user where id=".$id);
+		$skill_list = $model->query("select * from zoo_skill where uid=".$id);
+		$edu_list = $model->query("select * from zoo_edu where uid=".$id);
+		$exp_list = $model->query("select * from zoo_exp where uid=".$id);
 
 		$person_list = [
 			'user'=> $user_list,
@@ -23,7 +24,7 @@ class personControl extends baseControl{
 			'exp'=> $exp_list,
 		];
 
-		$this->display("category/index.html",$person_list);
+		$this->display("person.html",$person_list);
 	}
 }
 

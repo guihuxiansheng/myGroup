@@ -44,5 +44,24 @@ function getPage($total_num,$page_num='5')
 		'page_after_data'=>$page_after_data,
 	]; 
 }
+
+/**
+	 * [saveFiles description]
+	 * @param  [object] $file_data [文件信息数据]
+	 * @param  [string] $path      [保存路径]
+	 * @return [string]            [文件完整路径名]
+	 */
+	function saveFiles($file_data,$path){
+		// 获取文件临时路径
+		$var_file_path = $file_data['tmp_name'];
+		// 获取文件类型
+		$file_type = explode('/', $file_data['type']);
+		// 生成新的文件信息
+		$save_file_path = $path.time().rand(100000,1000000).'.'.$file_type[1];
+		// 保存图片
+		copy($var_file_path,$save_file_path);
+
+		return $save_file_path;
+	};
  
 ?>

@@ -3,75 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>demo</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="data/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.fullpage.css"> -->
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="data/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="data/css/index.css">
 
 </head>
 <body>
-        <!-- 顶部导航 -->
-        <div class="top ">
-        <!-- 导航左logo -->
-            <div class="top-left ">
-                <a href="#HOME">HEXA</a>
-            </div>
-        <!-- 导航右页面 -->
-            <ul class="top-right">
-                <li class="active"><a href="#HOME">HOME</a></li>
-                <li><a href="#ABOUT">ABOUT</a></li>
-                <li><a href="#RESUME">RESUME</a></li>
-                <li><a href="#PORTFOLIO">PORTFOLIO</a></li>
-                <li><a href="#SERVICE">SERVICE</a></li>
-                <li><a href="#BLOG">BLOG</a></li>
-                <li><a href="#CONTACT">CONTACT</a></li>
-            </ul>
+    <!-- 顶部导航 -->
+    <div class="top ">
+    <!-- 导航左logo -->
+        <div class="top-left ">
+            <a href="#HOME">HEXA</a>
         </div>
+    <!-- 导航右页面 -->
+        <ul class="top-right">
+            <li class="active"><a href="#HOME">HOME</a></li>
+            <li><a href="#ABOUT">ABOUT</a></li>
+            <li><a href="#RESUME">RESUME</a></li>
+        </ul>
+    </div>
     <div id="dowebok">
-    <!-- page01 -->
-    <div class="section page01" id="HOME">
-        <div class="touming">
+        <!-- page01 -->
+        <div class="section page01" id="HOME">
+            <div class="touming">
 
-    <!-- 首页内容 -->
-        <div class="container">
-            <h2>Hello I'm</h2>
-            <h1>JONATHAN DOE</h1>
-            <h2>Profesonal Web  Designer Developer</h2>
+        <!-- 首页内容 -->
+            <div class="container">
+                <h2>Hello I'm</h2>
+                <h1>JONATHAN DOE</h1>
+                <h2>Profesonal Web  Designer Developer</h2>
+            </div>
+        <!-- 翻页按钮 -->
+        <div class="btn-box">
+            
+            <a href="#ABOUT" class="btn"></a>
         </div>
-    <!-- 翻页按钮 -->
-    <div class="btn-box">
-        
-        <a href="#ABOUT" class="btn"></a>
-    </div>
+            </div>
         </div>
-    </div>
 
-    <!-- page02 -->
-    <div class="section page02" id="ABOUT">
-        <h3 class="">ABOUT</h3>
-    </div>
-    <div class="section page03"   id="RESUME">
-        <h3 class="">RESUME</h3>
-    </div>
-    <div class="section page03"   id="PORTFOLIO">
-        <h3 class="">PORTFOLIO</h3>
-    </div>
-    <div class="section page03"   id="SERVICE">
-        <h3 class="">SERVICE</h3>
-    </div>
-    <div class="section page03"   id="BLOG">
-        <h3 class="">BLOG</h3>
-    </div>
-    <div class="section page03"   id="CONTACT">
-        <h3 class="">CONTACT</h3>
-    </div>
+        <!-- page02 -->
+        <div class="section page02" id="ABOUT">
+            <h3 class="">{include 'about.html'}</h3>
+        </div>
+        <div class="section page03"   id="RESUME">
+            <h3 class="">{include 'resume.html'}</h3>
+        </div>
 
-</div>
+    </div>
 </body>
 </html>
-<script type="text/javascript " src="js/jquery.js"></script>
-<script type="text/javascript" src="js/jquery.fullpage.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript " src="data/js/jquery.js"></script>
+<script type="text/javascript" src="data/js/jquery.fullpage.js"></script>
+<script type="text/javascript" src="data/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     $(function(){
     $('#dowebok').fullpage({

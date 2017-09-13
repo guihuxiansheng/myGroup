@@ -11,8 +11,14 @@ class resumeControl extends baseControl{
 		$model = $this->model();
 
 		$resum_edu_list = $model->query("select * from zoo_edu");
+		$resume_user_list = $model->query("select * from zoo_user");
 
-		$this->display("category/index.html",$cate_list);
+		$edu_list = [
+			'user'=>$resume_user_list,
+			'edu'=>$resum_edu_list
+		];
+
+		$this->display("edu.php",$edu_list);
 	}
 	// 列表
 	function indexexp()
@@ -21,8 +27,14 @@ class resumeControl extends baseControl{
 		$model = $this->model();
 
 		$resum_exp_list = $model->query("select * from zoo_exp");
+		$resume_user_list = $model->query("select * from zoo_user");
 
-		$this->display("category/index.html",$cate_list);
+		$exp_list = [
+			'user'=>$resume_user_list,
+			'exp'=>$resum_exp_list
+		];
+
+		$this->display("exp.html",$exp_list);
 	}
 
 	// 添加教育背景
@@ -32,13 +44,14 @@ class resumeControl extends baseControl{
 		$model = $this->model();
 
 		$model->insert('zoo_edu',[
-			'uid'=>$_POST['user_id'],
-			'time'=>$_POST['edu_time'],
-			'title'=>$_POST['edu_title'],
-			'content'=>$_POST['edu_content'],
+			'uid'=>$_POST['uid'],
+			'time'=>$_POST['time'],
+			'title'=>$_POST['title'],
+			'content'=>$_POST['content'],
 		]);
 
-		$this->display("category/add.html",$cate_list);
+		// $this->display("edu.php",$cate_list);
+		$this->indexedu();
 	}
 	// 添加经验背景
 	function addexp()
@@ -46,30 +59,33 @@ class resumeControl extends baseControl{
 		// 添加数据进入教育页面
 		$model = $this->model();
 
-		$model->insert('zoo_edu',[
-			'uid'=>$_POST['user_id'],
-			'time'=>$_POST['edu_time'],
-			'title'=>$_POST['edu_title'],
-			'content'=>$_POST['edu_content'],
+		$model->insert('zoo_exp',[
+			'uid'=>$_POST['uid'],
+			'time'=>$_POST['time'],
+			'title'=>$_POST['title'],
+			'content'=>$_POST['content'],
 		]);
 
-		$this->display("category/add.html",$cate_list);
+		// $this->display("exp.php",$cate_list);
+		$this->indexexp();
 	}
 
 	// 删除
 	function deleteedu()
 	{
 		$model = $this->model();
-		$model->delect('zoo_edu','id='.$_GET['id']);
+		$model->delete('zoo_edu','id='.$_GET['id']);
 
-		$this->display("category/add.html",$cate_list);
+		// $this->display("category/add.html",$cate_list);
+		$this->indexedu();
 	}
 	function deleteexp()
 	{
 		$model = $this->model();
-		$model->delect('zoo_exp','id='.$_GET['id']);
+		$model->delete('zoo_exp','id='.$_GET['id']);
 
-		$this->display("category/add.html",$cate_list);
+		// $this->display("category/add.html",$cate_list);
+		$this->indexexp();
 	}
 }
 

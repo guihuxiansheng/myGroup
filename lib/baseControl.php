@@ -11,7 +11,7 @@ class baseControl{
 	public function run()
 	{
 		// 控制器
-		$control = isset($_REQUEST['control'])?trim($_REQUEST['control']):'goods'; 
+		$control = isset($_REQUEST['control'])?trim($_REQUEST['control']):'group'; 
 		// 控制器里的函数/行为
 		$action = isset($_REQUEST['action'])?trim($_REQUEST['action']):'index'; 
 
