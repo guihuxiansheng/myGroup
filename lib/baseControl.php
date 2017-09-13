@@ -49,9 +49,11 @@ class baseControl{
 	 * 实例化模型
 	 * @return object pdo对象
 	 */
-	public function model()
+	public function model($model_name='')
 	{
-		return new pdoClass("localhost","xiaomi","root","");
+		include 'model/'.$model_name.'.php';
+		$model_class = $model_name.'Model';
+		 return new $model_class();
 	}
 
 

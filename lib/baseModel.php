@@ -1,7 +1,7 @@
 <?php
 // PDO操作的相关类
 
-class pdoClass{
+class baseModel{
 	// 公共变量
 	private $dbhost;
 	private $dbname;
@@ -11,12 +11,14 @@ class pdoClass{
 	private $pdo;
 	 
 	// 构造函数
-	function __construct($dbhost,$dbname,$dbuser,$dbpwd)
+	function __construct()
 	{
-		$this->dbhost = $dbhost;
-		$this->dbname = $dbname;
-		$this->dbuser = $dbuser;
-		$this->dbpwd = $dbpwd;
+		global $CONFIG;
+
+		$this->dbhost = $CONFIG['dbhost'];
+		$this->dbname = $CONFIG['dbname'];
+		$this->dbuser = $CONFIG['dbuser'];
+		$this->dbpwd = $CONFIG['dbpwd'];
 	 
 		$dsn = "mysql:dbhost=".$this->dbhost.";dbname=".$this->dbname.";charset=utf8";
 		$this->pdo =new  PDO($dsn,$this->dbuser,$this->dbpwd); 
@@ -61,9 +63,9 @@ class pdoClass{
 	 * @param  string $table_name            表名
 	 * @param  array $new_data_array 被保存的数据
 	 */
-	function insert($table_name,$new_data_array='')
+	function insert($new_data_array='')
 	{
-		 
+		 $table_name = $this->base_name;
 		if (!empty($new_data_array)) {
 			 
 			 $col_array = array_keys($new_data_array); 

@@ -8,7 +8,7 @@ class userControl extends baseControl{
 	function index()//组主页
 	{ 
 		// 查询用户出来
-		$model = $this->model();
+		$model = $this->model('user');
 
 		$zoo_user = $model->query("select * from zoo_user");//查询所有
 

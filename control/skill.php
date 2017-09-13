@@ -8,15 +8,9 @@ class skillControl extends baseControl{
 	function index()
 	{ 
 		// 查询出来
-		$model = $this->model();
+		$model = $this->model('skill');
 
-		$skill_user_list = $model->query("select * from zoo_user");
-		$skill_skill_list = $model->query("select * from zoo_skill");
-
-		$skill_list = [
-			'user'=>$skill_user_list,
-			'skill'=>$skill_skill_list
-		];
+		$skill_list = $model->getInfo();
 
 		$this->display("skill.php",$skill_list);
 	}
@@ -24,13 +18,9 @@ class skillControl extends baseControl{
 	function add()
 	{
 		// 添加数据进入教育页面
-		$model = $this->model();
+		$model = $this->model('skill');
 
-		$model->insert('zoo_skill',[
-			'uid'=>$_POST['uid'],
-			'skills'=>$_POST['skills'],
-			'score'=>$_POST['score']
-		]);
+		$model->saveInfo();
 
 		// $this->display("edu.php",$cate_list);
 		$this->index();
@@ -39,7 +29,7 @@ class skillControl extends baseControl{
 	// 删除
 	function delete()
 	{
-		$model = $this->model();
+		$model = $this->model('skill');
 		$_GET['id'];
 		$model->delete('zoo_skill','id='.$_GET['id']);
 

@@ -8,9 +8,9 @@ class groupControl extends baseControl{
 	function index()
 	{ 
 		// 查询出来
-		$model = $this->model();
+		$model = $this->model('group');
 
-		$user_list = $model->query("select * from zoo_user");
+		$user_list = $model->getInfo();
 
 		$this->display("group.html",$user_list);
 	}

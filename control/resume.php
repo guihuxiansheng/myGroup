@@ -8,15 +8,9 @@ class resumeControl extends baseControl{
 	function indexedu()
 	{ 
 		// 查询出来
-		$model = $this->model();
+		$model = $this->model('resume');
 
-		$resum_edu_list = $model->query("select * from zoo_edu");
-		$resume_user_list = $model->query("select * from zoo_user");
-
-		$edu_list = [
-			'user'=>$resume_user_list,
-			'edu'=>$resum_edu_list
-		];
+		$edu_list = $model->getInfo();
 
 		$this->display("edu.php",$edu_list);
 	}
@@ -24,15 +18,9 @@ class resumeControl extends baseControl{
 	function indexexp()
 	{ 
 		// 查询出来
-		$model = $this->model();
+		$model = $this->model('resume');
 
-		$resum_exp_list = $model->query("select * from zoo_exp");
-		$resume_user_list = $model->query("select * from zoo_user");
-
-		$exp_list = [
-			'user'=>$resume_user_list,
-			'exp'=>$resum_exp_list
-		];
+		$exp_list = $model->getInfoExp();
 
 		$this->display("exp.html",$exp_list);
 	}
@@ -41,14 +29,9 @@ class resumeControl extends baseControl{
 	function addedu()
 	{
 		// 添加数据进入教育页面
-		$model = $this->model();
+		$model = $this->model('resume');
 
-		$model->insert('zoo_edu',[
-			'uid'=>$_POST['uid'],
-			'time'=>$_POST['time'],
-			'title'=>$_POST['title'],
-			'content'=>$_POST['content'],
-		]);
+		$model->saveInfo();
 
 		// $this->display("edu.php",$cate_list);
 		$this->indexedu();
@@ -57,14 +40,9 @@ class resumeControl extends baseControl{
 	function addexp()
 	{
 		// 添加数据进入教育页面
-		$model = $this->model();
+		$model = $this->model('resume');
 
-		$model->insert('zoo_exp',[
-			'uid'=>$_POST['uid'],
-			'time'=>$_POST['time'],
-			'title'=>$_POST['title'],
-			'content'=>$_POST['content'],
-		]);
+		$model->saveInfoExp();
 
 		// $this->display("exp.php",$cate_list);
 		$this->indexexp();
@@ -74,7 +52,7 @@ class resumeControl extends baseControl{
 	function deleteedu()
 	{
 		$model = $this->model();
-		$model->delete('zoo_edu','id='.$_GET['id']);
+		$model->delInfo();
 
 		// $this->display("category/add.html",$cate_list);
 		$this->indexedu();
@@ -82,7 +60,7 @@ class resumeControl extends baseControl{
 	function deleteexp()
 	{
 		$model = $this->model();
-		$model->delete('zoo_exp','id='.$_GET['id']);
+		$model->delInfoExp();
 
 		// $this->display("category/add.html",$cate_list);
 		$this->indexexp();

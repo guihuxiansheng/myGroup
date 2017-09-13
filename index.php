@@ -3,7 +3,8 @@
 // 1、只有一个入口
 // 
 include 'lib/common.php';
-include 'lib/pdoClass.php';
+include 'config.php';
+include 'lib/baseModel.php';
 include 'lib/baseControl.php';
 // smarty模版引擎
 // 第一步：引入文件
