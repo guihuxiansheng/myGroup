@@ -1,3 +1,28 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-09-14 12:24:47
+  from "D:\wamp64\www\20170914\myGroup\view\person\blog_before.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_59ba750fe2d103_54716677',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'ea65389a4916bc64e7052cb96113a753c6f95f5a' => 
+    array (
+      0 => 'D:\\wamp64\\www\\20170914\\myGroup\\view\\person\\blog_before.html',
+      1 => 1505391882,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_59ba750fe2d103_54716677 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '912959ba750fd47b42_83876202';
+?>
 <link rel="stylesheet" type="text/css" href="data/css/pe-icon-7-stroke.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
 <style type="text/css">
@@ -100,12 +125,18 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
-<script>        
+<?php echo '<script'; ?>
+ type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>        
   var mySwiper = new Swiper ('.swiper-container', {
     loop: true,
     pagination: '.swiper-pagination',
     paginationClickable: true
   })        
-  </script>
+  <?php echo '</script'; ?>
+>
 
+<?php }
+}

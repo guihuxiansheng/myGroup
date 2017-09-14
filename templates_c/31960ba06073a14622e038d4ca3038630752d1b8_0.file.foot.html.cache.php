@@ -1,3 +1,28 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-09-14 11:55:28
+  from "D:\wamp64\www\20170914\myGroup\view\person\foot.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_59ba6e30a73578_14954227',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '31960ba06073a14622e038d4ca3038630752d1b8' => 
+    array (
+      0 => 'D:\\wamp64\\www\\20170914\\myGroup\\view\\person\\foot.html',
+      1 => 1505390127,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_59ba6e30a73578_14954227 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '297959ba6e3095b503_85435899';
+?>
 <style type="text/css">
 .p2{
     width:100%;
@@ -195,4 +220,5 @@
 		        </div>
             </div>
         </div>
-    </div>
+    </div><?php }
+}

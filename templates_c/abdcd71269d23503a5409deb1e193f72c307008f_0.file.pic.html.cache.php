@@ -1,3 +1,28 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-09-14 12:28:01
+  from "D:\wamp64\www\20170914\myGroup\view\person\pic.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_59ba75d1c493c7_53943126',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'abdcd71269d23503a5409deb1e193f72c307008f' => 
+    array (
+      0 => 'D:\\wamp64\\www\\20170914\\myGroup\\view\\person\\pic.html',
+      1 => 1505392077,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_59ba75d1c493c7_53943126 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '2385459ba75d1b0a814_58738260';
+?>
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <style type="text/css">
 			.portfolio>.title h1 {
@@ -249,15 +274,22 @@
 				</div>
 			</div>
 
-			<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js "></script>
-			<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
+			<?php echo '<script'; ?>
+ src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js "><?php echo '</script'; ?>
+>
+			<?php echo '<script'; ?>
+ src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "><?php echo '</script'; ?>
+>
 
-			<script type="text/javascript ">
+			<?php echo '<script'; ?>
+ type="text/javascript ">
 				$('#myModal').on('shown.bs.modal', function() {
 					$('#myInput').focus()
 				})
-			</script>
-			<script type="text/javascript ">
+			<?php echo '</script'; ?>
+>
+			<?php echo '<script'; ?>
+ type="text/javascript ">
 				var oBox = document.querySelectorAll(".portfolio> .pic .box");
 				var oDiv = document.querySelectorAll(".portfolio > .pic .box div");
 				var aBtn = document.querySelectorAll(".portfolio>.xiao_title button ");
@@ -271,9 +303,16 @@
 						this.setAttribute("class", "active");
 					}
 				}
-			</script>
-			 <script src="data/js/mixitup.min.js"></script>
-			<script>
+			<?php echo '</script'; ?>
+>
+			 <?php echo '<script'; ?>
+ src="data/js/mixitup.min.js"><?php echo '</script'; ?>
+>
+			<?php echo '<script'; ?>
+>
 				var containerEl = document.querySelector('.mixitup');
 				var mixer = mixitup(containerEl);
-			</script>
+			<?php echo '</script'; ?>
+>
+<?php }
+}
