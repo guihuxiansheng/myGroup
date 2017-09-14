@@ -1,0 +1,211 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.header{
+	border: 1px solid #CCCCCC;
+	width: 100%;
+	min-height:300px;
+	background: url(data/image/7.jpg) no-repeat 0px 0px;
+	background-size: 100% 100%;
+	position: relative;
+	z-index: 2;
+	color: white;
+}
+.header .box{
+	width: 100%;
+	min-height:300px;
+	position: relative;
+	z-index: 66;
+	}
+.header::after{	
+    background: transparent linear-gradient(to right bottom, #3f51b5, #ff4081);    
+    opacity: 0.85;
+    content: "";
+    width: 100%;
+    min-height: 300px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;    
+    left: 0;
+    z-index: 1;
+}
+.header .blue_pink{
+	/*border: 1px solid red;*/
+	width: 100%;
+	min-height:300px;
+}
+.header .header_header{
+	/*border: 1px solid red;*/
+	width: 100%;
+	min-height: 50px;
+	margin-top: 42px;
+}
+.header .header_header .header_logo{
+	/*border: 1px solid red;*/
+	float: left;
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 80px;
+}
+.header .header_header .header_menu{
+	/*border: 1px solid red;*/
+	float: right;
+	width: 590px;
+	font-size: 13px;
+	margin-right: 80px;
+}
+.header .header_header .header_menu li{
+	float: left;
+	margin-left: 30px;
+}
+.header .header_header .header_menu li:first-child{
+	color: #ff4e9c;
+}
+.header .header_header .header_menu li a:hover{
+	color: #ff4e9c;
+	cursor: pointer;
+}
+.header .header_footer{
+	/*border:1px solid red;*/
+	width:100%;
+	min-height:50px;
+	text-align:center;
+	margin-top: 70px;
+}
+.header .header_footer p{
+	font-size: 14px;
+	margin-top: 20px;
+}
+
+.container .row{margin-top: 100px;}
+/*容器中的图片*/
+.container .blogPic img{
+	width: 100%;
+	display: block;
+}
+/*容器中的日志*/
+.container .daily .daily_say{
+	background: #3f51b5;
+	padding: 30px;
+	color: white;
+	font-size: 18px;
+}
+.container .daily .daily_say p+p{
+	font-size: 15px;
+}
+.container .daily .daily_say p span{
+	font-weight: bold;
+}
+/*容器中的评论*/
+.container .comments .comments_oneStyle{
+	/*border: 1px solid red;*/
+	width: 100%;
+	margin-bottom: 20px;
+}
+.container .comments .comments_oneStyle img{
+	border-radius: 50%;
+	float: left;
+	margin-right: 30px;
+}
+.container .comments .comments_oneStyle .comments_more{
+	float: left;
+	width: calc(100% - 120px);	
+	font-size: 14px;
+}
+.container .comments .comments_twoStyle{
+	/*border: 1px solid red;*/
+	width: 100%;
+	margin-bottom: 20px;
+}
+.container .comments .comments_twoStyle img{
+	border-radius: 50%;
+	float: left;
+	margin-right: 30px;
+	margin-left: 80px;
+}
+.container .comments .comments_twoStyle .comments_more{
+	float: left;
+	width: calc(100% - 200px);		
+	font-size: 14px;
+}
+
+/*留言*/
+.container .leave_comment input[type="text"]{
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 20px;
+}
+.container .leave_comment textarea{
+	width: 100%;
+	height: 100px;
+	padding: 8px;
+	margin-bottom: 20px;
+}
+.container .leave_comment .submit{
+	width: 144px;
+	height: 40px;
+	color: white;
+	background: #ff4081;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+}
+.container .leave_comment .submit:hover{
+	background: #3f51b5;
+}
+
+/*右边栏目*/
+/*搜索*/
+.search{}
+.search input{width: calc(100% - 38px);padding: 5px;float: left;}
+.search .search_btn{
+	width: 38px;
+	height: 38px;
+	background: #ff4081;
+	color: white;
+	float: left;
+	line-height: 38px;
+	text-align: center;
+	cursor: pointer;
+}
+.search .search_btn:hover{background: #3f51b5;}
+/*PopularPost*/
+.PopularPost{
+	margin-top: 80px;
+}
+.PopularPost h5{margin-bottom: 30px;}
+h5 span{font-weight: normal;color: #ff4081;}
+.PopularPost .pic_word{margin:10px 0px;}
+.PopularPost .pic_word img{
+	width: 70px;
+	float: left;
+}
+.PopularPost .pic_word .word{
+	float: left;
+	margin-left: 20px;
+	width: calc(100% - 90px);
+	margin-bottom: 10px;
+}
+/*.PopularPost .pic_word .word h6{line-height: 23px;}*/
+
+/*Category*/
+.Category a:link{color: black;}
+.Category a:hover{color: #ff4081;text-decoration: none;}
+.Category a{color: black;}
+.Category h5{margin-bottom: 30px;}
+.Category li{margin: 10px 0px;}
+/*Archive*/
+.Archive a:link{color: black;}
+.Archive a:hover{color: #ff4081;text-decoration: none;}
+.Archive a{color: black;}
+.Archive h5{margin-bottom: 30px;}
+.Archive li{margin: 10px 0px;}
+/*Tags*/
+.Tags h5{margin-bottom: 30px;}
+.Tags .word_box{}
+.Tags .word_box a{padding: 2px 5px;color: black;border: 1px solid #CCCCCC;line-height: 35px;}
+.Tags .word_box a:hover{color: #ff4081;text-decoration: none;border: 1px solid #ff4081;}

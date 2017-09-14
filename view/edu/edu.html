@@ -55,8 +55,8 @@
 									<input name="content" type="text" class="form-control">
 								</div>
 								<div class="form-group">
-									<input type="hidden" name="control" value="resume">
-									<input type="hidden" name="action" value="addedu">
+									<input type="hidden" name="control" value="edu">
+									<input type="hidden" name="action" value="add">
 									<button type="submit" class="btn btn-primary">提交</button>
 								</div>
 							</form>
@@ -79,7 +79,7 @@
 												<td>{$value01.title}</td>
 												<td>{$value01.content}</td>
 												
-												<td><a class="btn btn-success active" href="index.php?control=resume&action=deleteedu&id={$value01.id}">删除</a></td>
+												<td><a class="btn btn-success active" href="index.php?control=edu&action=delete&id={$value01.id}">删除</a></td>
 											</tr>
 										{/if}
 									{/foreach}

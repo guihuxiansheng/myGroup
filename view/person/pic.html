@@ -1,0 +1,296 @@
+<style type="text/css">
+	.portfolio{
+		padding-top: 100px;
+	}
+	.portfolio img{
+		width: 100%;
+	}
+	.portfolio>.title h1 {
+		position: relative;
+		display: inline-block;
+	}
+	
+	.portfolio>.title h1:before {
+		content: '';
+		width: 30px;
+		height: 2px;
+		background: pink;
+		position: absolute;
+		top: 50%;
+		margin-top: -1px;
+		left: -35px;
+	}
+	
+	.portfolio>.title h1:after {
+		content: '';
+		width: 30px;
+		height: 2px;
+		background: pink;
+		position: absolute;
+		top: 50%;
+		margin-top: -1px;
+		right: -35px;
+	}
+	
+	.portfolio>.pic .box {
+		margin: 10px 0px;
+		position: relative;
+	}
+	
+	.portfolio>.pic .box div {
+		display: none;
+		width: 100%;
+		height: 100%;
+		opacity: 0.7;
+		background: transparent linear-gradient(to right bottom, #3f51b5, #ff4081);
+		/* 标准的语法 */
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		text-align: center;
+		color: #FFFFFF;
+		animation: change 1s ease;
+	}
+	
+	.portfolio>.pic .box div h3 {
+		margin-top: 50px;
+		line-height: 50px;
+	}
+	
+	.portfolio>.pic .box div p {
+		margin-bottom: 30px;
+	}
+	
+	@keyframes change {
+		from {
+			width: 0px;
+			height: 0px;
+			left: 50%;
+			top: 50%;
+		}
+		to {
+			width: 100%;
+			height: 100%;
+			left: 0px;
+			top: 0px;
+		}
+	}
+	
+	.portfolio>.xiao_title {
+		margin: 10px 0px;
+	}
+	
+	.portfolio>.xiao_title button {
+		margin-left: 10px;
+		border: none;
+		background: transparent;
+	}
+	
+	.active {
+		color: hotpink;
+	}
+</style>
+<div class="container portfolio">
+	<div class="col-xs-12 text-center title ">
+		<h1>my <span >portfolio</span></h1>
+	</div>
+	<div id="filters" class="col-xs-12 text-center xiao_title portfolio-filter">
+		Filter: <button class="active filter" data-filter="app card icon logo web">All</button>
+		<button class="filter app" data-filter="app">Web Design</button>
+		<button class="filter" data-filter="logo">UI & UX</button>
+		<button class="filter">Branding</button>
+		<button class="filter">Print</button>
+	</div>
+	<div class="row pic" id="portfoliolist">
+		<div class=" one col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+			<div class="row box  mix-all" data-cat="logo" data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive "src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品1</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+			<div class="row box  mix-all"  data-cat="app" data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive " style="width: 100%; height: 300px; " src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品12</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+			<div class="row box " data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive " src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品12</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+			<div class="row box " data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive "  src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品13</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+		</div>
+		<div class=" one col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+			<div class="row box " data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive " src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品13</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+			<div class="row box " data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive " src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品1445</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+			<div class="row box " data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive "  style="width: 100%; height: 300px; " src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品155</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+			<div class="row box " data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive "  src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品551</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+		</div>
+		<div class=" one col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+			<div class="row box " data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive " style="width: 100%; height: 300px; " src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品188</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+			<div class="row box " data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive "  src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品188</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+			<div class="row box " data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive " src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品188</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+			<div class="row box " data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive "  src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品881</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+		</div>
+		<div class=" one col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+			<div class="row box " data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive "  src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品1</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+			<div class="row box " data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive " style="width: 100%; height: 300px; " src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品1</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+			<div class="row box " data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive " src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品1</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+			<div class="row box " data-toggle="modal" data-target="#myModal">
+				<img class="img-responsive "  src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+				<div>
+					<h3>作品1</h3>
+					<p>介绍</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<img class="img-responsive " src="http://themeaone.com/hexa-preview/hexa/img/portfolio/big/8.jpg " alt="... ">
+		</div>
+	</div>
+</div>
+<script type="text/javascript " src="https://cdn.bootcss.com/jquery-easing/1.4.1/jquery.easing.min.js "></script>
+<script type="text/javascript " src="https://cdn.bootcss.com/mixitup/2.1.11/jquery.mixitup.min.js "></script>
+<script type="text/javascript ">
+	$('#myModal').on('shown.bs.modal', function() {
+		$('#myInput').focus()
+	})
+</script>
+<script type="text/javascript ">
+	var oBox = document.querySelectorAll(".portfolio> .pic .box");
+	var oDiv = document.querySelectorAll(".portfolio > .pic .box div");
+	var aBtn = document.querySelectorAll(".portfolio>.xiao_title button ");
+	console.log(oDiv.length)
+	for (var i=0;i<oBox.length;i++) {
+
+		oBox[i].onmouseover=function(){
+			oDiv[i].style.display = "block";
+
+		}
+		oBox[i].onmouseout = function() {
+			oDiv[i].style.display = "none";
+		}
+				console.log(oDiv[i].style.display)
+		
+	}
+//			oBox.onmouseover = function() {
+//				oDiv.style.display = "block";
+//			}
+//			oBox.onmouseout = function() {
+//				oDiv.style.display = "none";
+//			}
+	for(var i = 0; i <aBtn.length; i++) {
+		aBtn[i].onclick = function() {
+			for(var i = 0; i < aBtn.length; i++) {
+				aBtn[i].setAttribute("class", "");
+			}
+			this.setAttribute("class", "active");
+		}
+	}
+</script>
+<script type="text/javascript">
+	$(function() {
+
+		var filterList = {
+			init: function() {
+				// MixItUp plugin 
+				$('#portfoliolist').mixitup({
+					targetSelector: '.portfolio',
+					filterSelector: '.filter',
+					effects: ['fade'],
+					easing: 'snap',
+				})
+
+			}
+
+		};
+
+		// Run the show! 
+		filterList.init();
+
+	});
+</script>

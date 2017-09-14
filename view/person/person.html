@@ -1,0 +1,90 @@
+{include 'view/public/header.html'}
+
+    <!-- 顶部导航 -->
+    <div class="top ">
+        <!-- 导航左logo -->
+        <div class="top-left ">
+                <a href="#HOME">HEXA</a>
+        </div>
+        <!-- 导航右页面 -->
+            <ul class="top-right">
+                <li class="active"><a href="#HOME">HOME</a></li>
+                <li><a href="#ABOUT">ABOUT</a></li>
+                <li><a href="#RESUME">RESUME</a></li>
+                <li><a href="#PORTFOLIO">PORTFOLIO</a></li>
+                <li><a href="#SERVICE">SERVICE</a></li>
+                <li><a href="#BLOG">BLOG</a></li>
+                <li><a href="#CONTACT">CONTACT</a></li>
+            </ul>
+    </div>
+    <div id="dowebok">
+        <!-- page01 -->
+        <div class="section page01" id="HOME">
+            {include 'person/head.html'}
+        </div>
+
+        <!-- page02 -->
+        <div class="section page02" id="ABOUT">
+            <div>
+                {include 'person/about.html'}
+                {include 'person/resume_before.html'}
+            </div>
+        </div>
+        <div class="section page03"   id="RESUME">
+            {include 'person/resume.html'}
+        </div>
+        <div class="section page04"   id="PORTFOLIO">
+            {include 'person/pic.html'}
+        </div>
+        <div class="section page05"   id="SERVICE">
+            {include 'person/service.html'}
+            {include 'person/blog_before.html'}
+        </div>
+        <div class="section page06"   id="BLOG">
+            {include 'person/blog.html'}
+        </div>
+        <div class="section page07"   id="CONTACT">
+            {include 'person/foot.html'}
+        </div>
+
+    </div>
+
+{include 'view/public/footer.html'}
+<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript " src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="data/css/animate.css">
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        $('.top-right').onePageNav();
+        window.onscroll = function(){
+            if(scroll().top>300){
+                $('.top').css({
+                    "box-shadow":"0 0 6px 0 #ccc"
+                })
+                $('.top a').css({
+                    'color':'black'
+                })
+            }else{
+                $('.top').attr('style','');
+            }
+        }
+        function scroll() {
+            if (document.body.scrollTop){
+                return {
+                    top:document.body.scrollTop,
+                    left:document.body.scrollLeft
+                }
+            }
+            else{
+                return {
+                    top:document.documentElement.scrollTop,
+                    left:document.documentElement.scrollLeft
+                }
+            }
+        }
+    });
+
+</script>
+    

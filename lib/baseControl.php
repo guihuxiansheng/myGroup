@@ -8,6 +8,17 @@
 class baseControl{
 
 	// 启动整个mvc框架的函数
+	protected static $control;
+	protected static $action;
+	protected $smarty;
+	function __construct(){
+		// smarty第二步:实例化
+		 $this->smarty = new Smarty();
+
+		 // smarty第三步：告诉它我们的视图层在哪一个目录
+		 
+		 $this->smarty->template_dir = "view";
+	}
 	public function run()
 	{
 		// 控制器
@@ -21,26 +32,29 @@ class baseControl{
 		$controlClassName =$control.'Control';
 		// 实例化控制器
 		$controlObject = new $controlClassName();
-
+		
+		self::$control = $control;
+		self::$action = $action;
 	 	// 调用控制器具体的方法
 		$controlObject->$action();
+
+		
 	}
 
 	/**
 	 * 显示视图
 	 * @param  string $html_path 视图的路径
 	 */
-	public function display($html_path,$view_data='')
+	public function display()
 	{
-		 // smarty第二步:实例化
-		 $smarty = new Smarty();
+		$html_path = self::$control.'/'.self::$control.'.html';
 
-		 // smarty第三步：告诉它我们的视图层在哪一个目录
-		 
-		 $smarty->template_dir = "view";
+		 $this->smarty->display($html_path);
+	}
 
-		 $smarty->assign("view_data",$view_data);
-		 $smarty->display($html_path);
+	public function assign($var_name,$var_value)
+	{
+		  $this->smarty->assign($var_name,$var_value);
 	}
 
  
@@ -51,8 +65,8 @@ class baseControl{
 	 */
 	public function model($model_name='')
 	{
-		include 'model/'.$model_name.'.php';
-		$model_class = $model_name.'Model';
+		include 'model/'.self::$control.'.php';
+		$model_class = self::$control.'Model';
 		 return new $model_class();
 	}
 

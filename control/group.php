@@ -11,8 +11,9 @@ class groupControl extends baseControl{
 		$model = $this->model('group');
 
 		$user_list = $model->getInfo();
+		$this->assign('view_data',$user_list);
 
-		$this->display("group.html",$user_list);
+		$this->display();
 	}
 }
 

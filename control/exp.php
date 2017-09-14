@@ -2,19 +2,20 @@
 /**
  * 商品分类控制器
  */
-class skillControl extends baseControl{
-
+class expControl extends baseControl{
 	// 列表
 	function index()
 	{ 
 		// 查询出来
 		$model = $this->model();
 
-		$skill_list = $model->getInfo();
-		$this->assign('view_data',$skill_list);
+		$exp_list = $model->getInfo();
+
+		$this->assign('view_data',$exp_list);
 
 		$this->display();
 	}
+
 	// 添加教育背景
 	function add()
 	{
@@ -23,8 +24,9 @@ class skillControl extends baseControl{
 
 		$model->saveInfo();
 
-		$skill_list = $model->getInfo();
-		$this->assign('view_data',$skill_list);
+		$exp_list = $model->getInfo();
+
+		$this->assign('view_data',$exp_list);
 
 		$this->display();
 	}
@@ -33,11 +35,10 @@ class skillControl extends baseControl{
 	function delete()
 	{
 		$model = $this->model();
-		$_GET['id'];
-		$model->delete('zoo_skill','id='.$_GET['id']);
+		$model->delInfo();
 
-		$skill_list = $model->getInfo();
-		$this->assign('view_data',$skill_list);
+		$exp_list = $model->getInfo();
+		$this->assign('view_data',$exp_list);
 
 		$this->display();
 	}

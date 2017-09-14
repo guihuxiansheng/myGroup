@@ -7,12 +7,20 @@ class personControl extends baseControl{
 	// 列表
 	function index()
 	{ 
-		// 查询出来
-		$model = $this->model('person');
-		
-		$person_list = $model->getInfo();
+		$this->smarty->caching = true;
+		$this->smarty->setCacheDir('cache');
 
-		$this->display("person.html",$person_list);
+		if(!$this->smarty->isCached('person/person.html'))
+		{
+			// 查询出来
+			$model = $this->model();
+			
+			$person_list = $model->getInfo();
+
+			$this->assign('view_data',$person_list);
+		} 
+
+		$this->display();
 	}
 }
 

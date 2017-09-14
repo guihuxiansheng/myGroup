@@ -1,6 +1,8 @@
 <style type="text/css">
 	.about{
 		text-align: center;
+		padding-top: 120px;
+		min-height: 500px;
 	}
 	.about.container>h1{
 		font-size: 30px;
@@ -36,6 +38,9 @@
 		position: relative;
 		top:-11px;
 	}
+	.about.container>h1>span{
+		color: #3f51b5;
+	}
 	.about.container .row{
 		text-align:left; 
 	}
@@ -53,7 +58,7 @@
 		position: absolute;
 		top:20px;
 	}
-	@media screen(min-width: 768px) and(max-width: 992px){
+	/*@media screen(min-width: 768px) and(max-width: 992px){
 		.about .col-sm-5{
 			flex: 0 0 41.666666667%;
 			max-width: 41.666666667%;
@@ -62,73 +67,83 @@
 			flex: 0 0 58.333333333%;
 			max-width: 58.333333333%;
 		}
-	}
-	.about.container .row .image img{
+	}*/
+	.about.container .row img{
 		width:100%;
 	}
 	/*进度条*/
 	.about .progress{
 		height: 3px;
 	}
-	.about .progress .progress-bar{
+	/*.about .progress .progress-bar-parent{
+		width: 95%;
+	}*/
+	.about .progress .progress-bar-parent .progress-bar{
 		position: relative;
 		width: 0%;
 		height: 3px; 
 		opacity: 1;
 		background: transparent linear-gradient(to right, #3f51b5, #ff4081);
-		animation: wobble 1.5s 1 both;
+		animation: wobble 3s 1 both;
 	}
 	
-	.about .progress .progress-bar::before{
+	.about .progress .progress-bar-parent .progress-bar::before{
 		position: absolute;
 	    right: 0;
-	    /*content: attr(data-present);*/
-	    content:'95%';
+	    content: attr(data-present);
+	    /*content:'95%';*/
 	    width: 10px;
 	    height: 10px;
 	    top: -24px;
 	    color: inherit;
 	}
-	@-webkit-keyframes wobble {
+	@keyframes wobble {
 	     from {
 	     	width: 0;
 	     }
 	     to{
-	     	width: 95%;
+	     	width: 100%;
 	     }
 		}
-	.about .skills_title{
+	.about p.about_skills_title{
 		margin: 0;
 		padding: 0;
+		font-weight: normal;
+	    color: #333;
+	    font-size: 14px;
+	    font-style: normal;
+	    font-weight: 400;
+	    line-height: 24px;
+	    visibility: visible;
 	}
 	.about .skills_title_right{
 		float: right;
 	}
 </style>
-<div class="container about">
-	<h1>ABOUT ME</h1>
+
+<div class="container about mt-20" >
+	<h1>关于<span>个人</span></h1>
 	<div class="row">
-		<div class="col-md-3 col-sm-5">
-			<div class="image">
-				<img src="{$view_data['user'][0]['iconimg']}">
-			</div>
-			
+		<div class="col-md-3 col-sm-5 mb-40">
+			<img src="{$view_data['user'][0]['iconimg']}">
 		</div>
-		<div class="col-md-5 col-sm-7">
-			<h3>I'm {$view_data['user'][0]['name']}</h3>
-			<p>{$view_data['user'][0]['intro']}</p>
+		<div class="col-md-5 col-sm-7 mb-40">
+			<h3 style="font-weight: 600;">我是 {$view_data['user'][0]['name']}</h3>
+			<p class="about_skills_title">{$view_data['user'][0]['intro']}</p>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 col-xs-12 mb-40">
 			<h2 class="about_skills">skills</h2>
 			<!-- 循环的部分 -->
 			{foreach $view_data['skill']  as $key => $value}
-			<p class="skills_title">{$value.skills} <span class="skills_title_right">{$value.score}%</span></p>
+			<p class="about_skills_title">{$value.skills} <span class="skills_title_right">{$value.score}%</span></p>
 			<div class="progress">
-				<div class="progress-bar" data-present="{$value.score}%" >
+				<div class="progress-bar-parent" style="width: {$value.score}%;height: 100%;">
+					<div class="progress-bar" data-present="{$value.score}%" >
+					</div>
 				</div>
-				<!-- 此处的动画效果要改width属性 -->
 			</div>
 			{/foreach}
 		</div>
 	</div>
 </div>
+<div style="width: 100%;"></div>
