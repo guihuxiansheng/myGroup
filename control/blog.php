@@ -4,6 +4,13 @@
  */
 class blogControl extends baseControl{
 
+	public function __construct(){
+		parent::__construct();
+		if(!$this->isLogin()){
+			header('location:index.php?control=person&action=index');
+		}
+	}
+
 	// 列表
 	function index()
 	{ 

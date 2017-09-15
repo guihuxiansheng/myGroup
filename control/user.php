@@ -3,7 +3,12 @@
  * zoo_user表控制器
  */
 class userControl extends baseControl{
-
+	public function __construct(){
+		parent::__construct();
+		if(!$this->isLogin()){
+			header('location:index.php?control=login&action=index');
+		}
+	}
 	//
 	function index()//查询个人主页数据  zoo_user
 	{

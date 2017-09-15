@@ -22,6 +22,7 @@
 
 			$this->insert([
 				'name'=>$_POST['name'],
+				'password'=>$_POST['password'],
 				'intro'=>$_POST['intro'],
 				'bigimg'=>$bigimg,
 				'iconimg'=>$file04,

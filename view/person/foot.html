@@ -159,7 +159,7 @@
              <h1>
                 <span>CONTENT <i>ME</i></span>
             </h1>
-        <!--列表 -->
+        <!--列表 --><form action="index.php" method="POST">
             <div class="container">
 		        <ul class="content_list">
 		            <li>
@@ -182,17 +182,20 @@
 		        </ul>
 		        <!-- 联系人信息 -->
 		        <div class="row ipt">
-		            <div class="col-sm-6 col-xs-12">            
-		                <input type="text" placeholder="Name">
-		                <input type="email" placeholder="Email">
-		                <input type="text" placeholder="Subject">
+                
+		            <div class="col-md-6 col-sm-6 col-xs-12">            
+		                <input type="text" name="name" placeholder="Name">
+		                <input type="email" name="email" placeholder="Email">
+		                <input type="text" name="subject" placeholder="Subject">
 		            </div>
-		            <div class="col-sm-6 col-xs-12">
-		                <textarea placeholder="Message"></textarea>
+		            <div class="col-md-6 col-sm-6 col-xs-12">
+		                <textarea placeholder="Message" name="message"></textarea>
+                        <input type="hidden" name="control" value="contact">
+                        <input type="hidden" name="action" value="save">
 		                <input type="submit" placeholder="SUBMIT" value="SUBMIT" > 
 		            </div>
-		
+		          
 		        </div>
-            </div>
+            </div></form>
         </div>
     </div>

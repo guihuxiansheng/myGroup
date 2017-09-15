@@ -1,0 +1,45 @@
+{include 'view/public/header.html'}
+    <style type="text/css">
+    .box{
+        width: 100%;
+        height: 100%;
+        background: #6F3EA0;
+        padding: 180px;
+    }
+        .header h3{
+            color: #0ED0C6;
+            
+            text-align: left
+        }
+        .container{
+            width: 40%;
+            
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="container">
+        <div class="header">
+            <h3>用户登录</h3>
+        </div>
+    <form class="bs-example bs-example-form" role="form" action="index.php" method="POST">
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon">用户名</span>
+            <input type="text" name="name" class="form-control" placeholder="name">
+        </div><br>
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon">密码</span>
+            <input type="password" name="password" class="form-control" placeholder="password">
+        </div><br>
+        <div class="btn-group-lg" >
+            <input type="hidden" name="control" value="login">
+            <input type="hidden" name="action" value="login">
+            <button class="btn btn-success">确定</button> 
+            <button class="btn btn-warning " style="margin-left: 10px">取消</button>  
+        </div>
+    </div></div>
+    
+{include 'view/public/footer.html'}

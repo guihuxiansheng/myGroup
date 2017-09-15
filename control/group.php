@@ -3,6 +3,12 @@
  * 小组首页控制器
  */
 class groupControl extends baseControl{
+	public function __construct(){
+		parent::__construct();
+		if(!$this->isLogin()){
+			header('location:index.php?control=login&action=index');
+		}
+	}
 
 	// 列表
 	function index()

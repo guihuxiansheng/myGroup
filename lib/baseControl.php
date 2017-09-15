@@ -40,6 +40,13 @@ class baseControl{
 
 		
 	}
+	public function isLogin(){
+		session_start();
+		if (isset($_SESSION['flag']) && $_SESSION['flag']) {
+			return true;
+		}
+		return false;
+	}
 
 	/**
 	 * 显示视图

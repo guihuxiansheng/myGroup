@@ -2,22 +2,16 @@
 /**
  * 商品分类控制器
  */
-class expControl extends baseControl{
-	public function __construct(){
-		parent::__construct();
-		if(!$this->isLogin()){
-			header('location:index.php?control=login&action=index');
-		}
-	}
+class commentControl extends baseControl{
 	// 列表
 	function index()
 	{ 
 		// 查询出来
 		$model = $this->model();
 
-		$exp_list = $model->getInfo();
+		$comment_list = $model->getInfo();
 
-		$this->assign('view_data',$exp_list);
+		$this->assign('view_data',$comment_list);
 
 		$this->display();
 	}
@@ -30,9 +24,9 @@ class expControl extends baseControl{
 
 		$model->saveInfo();
 
-		$exp_list = $model->getInfo();
+		$edu_list = $model->getInfo();
 
-		$this->assign('view_data',$exp_list);
+		$this->assign('view_data',$edu_list);
 
 		$this->display();
 	}
@@ -43,8 +37,8 @@ class expControl extends baseControl{
 		$model = $this->model();
 		$model->delInfo();
 
-		$exp_list = $model->getInfo();
-		$this->assign('view_data',$exp_list);
+		$comment_list = $model->getInfo();
+		$this->assign('view_data',$comment_list);
 
 		$this->display();
 	}

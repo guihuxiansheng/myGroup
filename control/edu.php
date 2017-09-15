@@ -3,6 +3,12 @@
  * 商品分类控制器
  */
 class eduControl extends baseControl{
+	public function __construct(){
+		parent::__construct();
+		if(!$this->isLogin()){
+			header('location:index.php?control=login&action=index');
+		}
+	}
 	// 列表
 	function index()
 	{ 

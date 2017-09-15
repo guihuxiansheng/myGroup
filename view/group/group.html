@@ -1,29 +1,60 @@
-{include 'view/public/header.html'}
-	<div class="container">
-		<div>
-			<h1>我们的小组</h1>
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;立志成才，我们无所畏惧，向未来的彼岸，奋勇航行。报效祖国，我们无所保留，向成功的巅峰，奋力攀登！<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每个人都有一份属于自我的志向，也许远大、也许平凡，俗话说：“无志之人常立志，有志之人立大志”。立志是成功的动力，能让我们为实现人生目标而不懈地奋斗，凭借坚忍不拔的信念屹立在成功的巅峰眺望远方。立志贵在坚持，立志贵在立大志！而立大志，莫过于立志成才，照亮祖国未来的期望。</p>
-			<h2>我们的组员</h2>
-			<table class="table table-hover" >
-				<tr>
-					<th>姓名</th>
-					<th>简介</th>
-					<th></th>
-				</tr>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="data/css/1.css"/>
+	</head>
+	<body>
+		<div class="lunbo">
+			<ul>
+				<li><img src="data/images/slidepic1.jpg"/></li>
+				<li><img src="data/images/slidepic2.jpg"/></li>
+				<li><img src="data/images/slidepic3.jpg"/></li>
+				<li><img src="data/images/slidepic4.jpg"/></li>
+				<li><img src="data/images/slidepic5.jpg"/></li>
+			</ul>
+			<ol>
+				<!--<li class="left"><img src="data/images/prev.png"/></li>
+				<li class="right"><img src="data/images/next.png"/></li>-->
+				<li class="left"><img src="data/images/left.jpg"/></li>
+				<li class="right"><img src="data/images/right.jpg"/></li>
+			</ol>
+		</div>
+		
+		<div class="our_group_h2">
+			<h2>我们的成员</h2>
+		</div>
+		<div class="our_group">
+			<ul>
 				{foreach $view_data as $key => $value}
-				
-				<tr>
-					<!-- <td>本科</td> -->
-					<td>{$value.name}</td>
-					<td>{$value.intro}</td>
-					
-					<td><a class="btn btn-success active" href="index.php?control=person&action=index&id={$value.id}">进入成员主页</a></td>
-				</tr>
+				<li>
+					<div class="{if $key%2}left_right{else}right_left{/if}">
+						<a href="index.php?control=person&action=index&id={$value.id}"><img src="data/images/group_zr.jpg"/></a>
+						<span class="member_name">{$value.name}</span>
+						<span class="briefIntroduction">{$value.intro}</span>
+					</div>					
+				</li>
 				{/foreach}
-			</table>
+				<!-- <li>
+					<div class="right_left">
+						<a href="#"><img src="data/images/group_zr.jpg"/></a>
+						<span class="member_name">何臻荣</span>
+						<span class="briefIntroduction">认真刻苦，热爱运动</span>
+					</div>					
+				</li> -->
+			</ul>
 		</div>
-		<div>
+		<div class="our_group_h2">
+			<h2>我们的座右铭</h2>
 		</div>
-	</div>
-	{include 'view/public/footer.html'}
+		<div class="about_us">
+			<div class="about_us_word">
+				<p> 立志成才，我们无所畏惧，向未来的彼岸，奋勇航行。报效祖国，我们无所保留，向成功的巅峰，奋力攀登！</p>
+				<p> 每个人都有一份属于自我的志向，也许远大、也许平凡，俗话说：“无志之人常立志，有志之人立大志”。立志是成功的动力，能让我们为实现人生目标而不懈地奋斗，凭借坚忍不拔的信念屹立在成功的巅峰眺望远方。立志贵在坚持，立志贵在立大志！而立大志，莫过于立志成才，照亮祖国未来的期望。</p>
+			</div>
+		</div>
+		<script src="data/js/my.js" type="text/javascript" charset="utf-8"></script>
+		<script src="data/js/lunbo.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
