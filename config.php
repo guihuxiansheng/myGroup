@@ -6,6 +6,7 @@ $CONFIG = [
 	'dbname'=>'xiaomi',
 	'dbuser'=>'root',
 	'dbpwd'=>'',
+	'charset'=>'utf8'
 ];
 
 ?>
